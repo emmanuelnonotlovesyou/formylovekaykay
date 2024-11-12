@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Q&A App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="app">
+
+        <!-- Question 1 -->
+        <div class="screen" id="screen1">
+            <p>Are you Kay Kay?</p>
+            <button onclick="nextScreen('screen2')">Yes</button>
+            <button onclick="exitApp()">No</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="screen" id="screen2">
+            <p>Are you really sure?</p>
+            <button onclick="nextScreen('screen3')">Yes</button>
+            <button onclick="exitApp()">No</button>
+        </div>
+
+        <!-- Greeting Screen -->
+        <div class="screen" id="screen3">
+            <p>Ok, hello Kay Kay!</p>
+            <button onclick="nextScreen('screen4')">Hello</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="screen" id="screen4">
+            <p>I have a question for you...</p>
+            <button onclick="nextScreen('screen5')">What is it?</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="screen" id="screen5">
+            <p>Do you love Emmanuel?</p>
+            <button onclick="nextScreen('screen6')">Yes</button>
+            <button onclick="exitApp()">No</button>
+        </div>
+
+        <!-- Confirmation Question -->
+        <div class="screen" id="screen6">
+            <p>Are you sure?</p>
+            <button onclick="nextScreen('screen7')">Yes</button>
+            <button onclick="exitApp()">No</button>
+        </div>
+
+        <!-- Will You Be Mine Question -->
+        <div class="screen" id="screen7">
+            <p>Will you be mine forever, my love?</p>
+            <button onclick="nextScreen('screen8')">Yes</button>
+            <button onclick="exitApp()">No</button>
+        </div>
+
+        <!-- Question About What She Likes About Emmanuel -->
+        <div class="screen" id="screen8">
+            <p>So, what are the things you like about Emmanuel?</p>
+            <textarea id="likes-about-emmanuel" placeholder="Write here..."></textarea>
+            <button onclick="saveLikesAboutEmmanuel()">Continue</button>
+        </div>
+
+        <!-- Question About Dislikes -->
+        <div class="screen" id="screen9">
+            <p>Is there anything you don’t like about Emmanuel?</p>
+            <button onclick="nextScreen('screen10')">No</button>
+            <button onclick="showAnswerBox('screen9', 'dislike-answer')">Yes</button>
+            <div id="dislike-answer" class="answer-box">
+                <textarea id="dislike-textarea" placeholder="What is it?"></textarea>
+                <button onclick="saveDislikesAboutEmmanuel()">Continue</button>
+            </div>
+        </div>
+
+        <!-- Question About Going with Emmanuel -->
+        <div class="screen" id="screen10">
+            <p>Would you like to go with Emmanuel?</p>
+            <button onclick="showMessageThenContinue('screen11', 'aww', 'Yes')">Yes</button>
+            <button onclick="showMessageThenContinue('screen11', 'wow', 'No')">No</button>
+        </div>
+
+        <!-- Final Confirmation - Will You Be with Emmanuel -->
+        <div class="screen" id="screen11">
+            <p>Will you be with Emmanuel officially?</p>
+            <button onclick="showFinalMessage('yes')">Yes</button>
+            <button onclick="showFinalMessage('no')">No</button>
+        </div>
+
+        <!-- Poem Screen with Typewriter Effect (now the last screen) -->
+        <div class="screen" id="screen12">
+            <h2 id="final-heading"></h2>
+            <p id="poem-text" class="typewriter-text"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
